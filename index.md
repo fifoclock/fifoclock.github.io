@@ -21,14 +21,11 @@
 
 * Arduino-compatible firmware
 * USB 1.1 via Micronucleus
-* On-clock configurable colors and animations
 
 # Build Guide
 ## Tools
 
-### Essentials
-
-* Soldering Iron
+* Soldering Iron (with temperature control)
 * Solder
 * Flux
 * Tweezers
@@ -36,70 +33,66 @@
 * Multimeter
 * Magnifying glass or microscope
 
-## Components
+## What you'll need
 
 PCB:
 [Gerber Files](https://github.com/filoclock/hardware/tree/master/gerbers)
 
+You can download these and send them to a number of PCB manufacturers 
+(JLCPCB, PCBWay, etc)
+
 For a detailed list of components with part numbers and ordering links see:
 [Bill of Materials](https://docs.google.com/spreadsheets/d/1V83YUcRUipDrwoqBEJTFpV8GhJwbHhm9ufcjOwlMkEM/edit?usp=sharing)
 
-Solderable Components:
+We purchased most of our components from LCSC, and the LEDs from AliExpress.
 
-* 14x RGBW SK6812
-* ATTiny84A
-* DS1307Z
-* 5-Way Switch
-* Type-C Connector
-* Reset Switch
-* 2x 5V Varistors
-* 32.768 kHz Crystal
-* 22 uF Capacitor
-* 500 ma PTC Fuse
-* 16x 100 nF Capacitor
-* CR2032 Holder
-* 2x 3.6 V Zener Diodes
-* 4x 5.1 kOhm Resistors
-* 2x 68 Ohm Resistors
-* 1.5 kOhm Resistor
-
-Other Components:
+Other hardware you'll need to complete the clock:
 
 * USB-C Cable
 * CR2032 Battery
-* 2x M3x20 Standoffs
-* 2x M3 Screws
+* 2x M3 Screws (about 40mm length)
+* 2x M3 Nuts
 
-Quantity is for each board, and is 1x unless specified.
+The M3 hardware can be replaced by 6/32 imperial hardware.
 
 ## Soldering
 
-### Step 1
+This project involves quite a few small SMD components. If you don't have
+much experience with SMD soldering, check out the EEVBlog's excellent
+[video](https://www.youtube.com/watch?v=b9FC9fAlfQE) on the subject.
+
+Components are listed on the BOM with their reference designator, which
+can be matched to the silkscreened text on the PCB.
+
+### Step 1 - LEDs
 
 Solder the SK6812 LEDs to the front. They are oriented so that the warm white
 portion points toward the top of the clock (the corner notch will be in the
-top left)
+top left). Past v1.1 there should be a silk-screened corner to align them.
 
-This is done first because it is easy to solder the LEDs with no components on
-the back. Once the LEDs are in place, they provide an even base to hold the 
-board level when flipped over.
+The LEDs are somewhat thermally sensitive, so try not to heat them for too long
+or you may end up with strange issues later.
 
-### Step 2
+### Step 2 - SMD
 
-Next, solder the high pin count SMD components to the back. This includes the 
-USB-C connector, ATTINY, and DS1307. This way, other components won't be in 
+Solder the high pin count SMD components to the back. This includes the
+USB-C connector, ATTINY, and DS1307. This way, other components won't be in
 the way of these more difficult components.
 
-```
-editors notes
+Next, do small passives (resistors and capacitors).
 
-point to a SMD soldering tutorial
-suggested tools
+Lastly, solder the reset button and joystick.
 
-reference components by name once BOM is included
-WARN about switch! its internal plastic structure is easily melted when
+WARNING: The joystick's  internal plastic structure is easily melted when
 attempting to fix soldering mistakes, which will lead to a stuck switch!
-```
+Be careful and do not apply heat for long periods of time.
+
+
+### Step 3 - Through-Hole
+
+Finally, solder the through-hole components, including the battery holder,
+RTC crystal, and programming header.
+
 
 ## Firmware Installation
 
