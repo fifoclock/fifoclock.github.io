@@ -1,7 +1,7 @@
 # What is FILO Clock?
 FILO Clock is an open-source digital clock similar to binary clocks or the TIX
 clock that display the time using discrete LEDs. It shows time using a FILO
-(First-In Last-Out) system described (below)[#how-to-read-the-filo-system]
+(First-In Last-Out) system described [below](#how-to-read-the-filo-system).
 
 # Pictures
 
