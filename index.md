@@ -1,11 +1,19 @@
 # About Us
-
+We are Connor Northway and Eddie Zhou, currently two second-year Computer Engineering and Computer Science students at Northeastern University (as of writing this post).
 
 # Inspiration
-
+The idea itself came from this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661), in which Destin shows off his [TIX clock](https://www.thinkgeek.com/product/7437/).
+Unfortunately the original version of this clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
 # How to Read the FILO System
+White = ON  
+Black = OFF
+![FILO 0-9](./FILO_0-9.png)
+Each column shows a different number that the indicator can display.
+With the 5 LEDs above, the numbers 0-9 can be displayed.
 
+![FILO 0-5](./FILO_0-5.png)
+The numbers 0-5 shown with 3 LEDs.
 
 # Device Specifications
 ## Hardware
