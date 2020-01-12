@@ -1,7 +1,7 @@
-# What is FILO Clock?
-FILO Clock is an open-source digital clock similar to binary clocks or the TIX
-clock that display the time using discrete LEDs. It shows time using a FILO
-(First-In Last-Out) system described [below](#how-to-read-the-filo-system).
+# What is FIFO Clock?
+FIFO Clock is an open-source digital clock similar to binary clocks or the TIX
+clock that display the time using discrete LEDs. It shows time using a FIFO
+(First-In First-Out) system described [below](#how-to-read-the-filo-system).
 
 # Pictures
 
@@ -18,14 +18,14 @@ writing this post).
 The idea itself came from this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661), in which Destin shows off his [TIX clock](https://www.thinkgeek.com/product/7437/).
 Unfortunately the original version of this clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
-# How to Read the FILO System
+# How to Read the FIFO System
 White = ON  
 Black = OFF
-![FILO 0-9](./FILO_0-9.png)
+![FIFO 0-9](./FIFO_0-9.png)
 Each column shows a different number that the indicator can display.
 With the 5 LEDs above, the numbers 0-9 can be displayed.
 
-![FILO 0-5](./FILO_0-5.png)
+![FIFO 0-5](./FIFO_0-5.png)
 The numbers 0-5 shown with 3 LEDs.
 
 # Device Specifications
