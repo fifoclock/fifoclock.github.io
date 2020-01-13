@@ -1,7 +1,7 @@
 # What is FIFO Clock?
 FIFO Clock is an open-source digital clock similar to binary clocks or the TIX
 clock that display the time using discrete LEDs. It shows time using a FIFO
-(First-In First-Out) system described [below](#how-to-read-the-filo-system).
+(First-In First-Out) system described below).
 
 # Pictures
 
@@ -15,10 +15,24 @@ Engineering and Computer Science students at Northeastern University (as of
 writing this post).
 
 # Inspiration
-The idea itself came from this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661), in which Destin shows off his [TIX clock](https://www.thinkgeek.com/product/7437/).
+The idea itself came from this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661), in which Destin shows off his [TIX clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
 Unfortunately the original version of this clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
 # How to Read the FIFO System
+The FIFO system for our clock is a way of representing a numerical digit using
+individual LEDs. It was created as a compromise between simply counting the
+number of illuminated LEDs like on the TIX Clock which requires twice as many
+LEDs, and a binary clock which is harder and takes more time to read.
+
+FIFO stands for [First-In First-Out](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)),
+and displays a number by first illuminating LEDs from the bottom. At this point, the number of illuminated LEDs represents the digit.
+Once all LEDs are illuminated, LEDs are turned off from the bottom, and the number being represented can be thought of as either
+- (Total Number of LEDs) + (OFF LEDs)
+or 
+- (Total Number of LEDs) * 2 - (ON LEDs)
+
+It's probably easier to understand if you just look at the examples shown below though:
+
 White = ON  
 Black = OFF
 ![FIFO 0-9](./FIFO_0-9.png)
