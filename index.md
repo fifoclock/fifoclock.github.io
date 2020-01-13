@@ -1,6 +1,9 @@
 # What is FIFO Clock?
-FIFO Clock is an open-source digital clock similar to binary clocks or the TIX
-clock that display the time using discrete LEDs. It shows time using a FIFO
+FIFO Clock is an open-source digital clock similar to a
+[binary clock](https://en.wikipedia.org/wiki/Binary_clock)
+or the
+[TIX Clock]((https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/)
+that displays the time using discrete LEDs. It shows time using a FIFO
 (First-In First-Out) system described below.
 
 # Pictures
@@ -16,9 +19,9 @@ Jan. 2020).
 
 # Inspiration
 We were inspired to create our own clock by this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661).
-The idea for the FILO Clock started as a compromise between [Binary Clocks] (https://en.wikipedia.org/wiki/Binary_clock)
-and the [TIX clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
-Unfortunately the original version of this clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
+The idea for the FILO Clock started as a compromise between a [binary clock](https://en.wikipedia.org/wiki/Binary_clock)
+and the [TIX Clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
+Unfortunately the original version of the TIX Clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
 The FIFO system for our clock is a way of representing a numerical digit using
 individual LEDs. It was created as a compromise between the TIX Clock's system
@@ -32,7 +35,6 @@ At this point, the number of illuminated LEDs represents the digit.
 Once all LEDs are illuminated, LEDs are turned off sequentially from the bottom
 up. In this state, the number being represented can be thought of as either:
 - (Total Number of LEDs) + (OFF LEDs)
-or 
 - (Total Number of LEDs) * 2 - (ON LEDs)
 
 It's probably easier to understand if you just look at the examples shown below though:
