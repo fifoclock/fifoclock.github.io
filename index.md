@@ -2,7 +2,7 @@
 FIFO Clock is an open-source digital clock similar to a
 [binary clock](https://en.wikipedia.org/wiki/Binary_clock)
 or the
-[TIX Clock]((https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/)
+[TIX Clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/)
 that displays the time using discrete LEDs. It shows time using a FIFO
 (First-In First-Out) system described below.
 
