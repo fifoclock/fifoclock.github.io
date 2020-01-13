@@ -1,7 +1,7 @@
 # What is FIFO Clock?
 FIFO Clock is an open-source digital clock similar to binary clocks or the TIX
 clock that display the time using discrete LEDs. It shows time using a FIFO
-(First-In First-Out) system described below).
+(First-In First-Out) system described below.
 
 # Pictures
 
@@ -10,23 +10,27 @@ clock that display the time using discrete LEDs. It shows time using a FIFO
 ![Back](./Back.png)
 
 # About Us
-We are Connor Northway and Eddie Zhou, currently two second-year Computer
+We are Connor Northway and Eddie Zhou, two second-year Computer
 Engineering and Computer Science students at Northeastern University (as of
-writing this post).
+Jan. 2020).
 
 # Inspiration
-The idea itself came from this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661), in which Destin shows off his [TIX clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
+We were inspired to create our own clock by this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661).
+The idea for the FILO Clock started as a compromise between [Binary Clocks] (https://en.wikipedia.org/wiki/Binary_clock)
+and the [TIX clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
 Unfortunately the original version of this clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
-# How to Read the FIFO System
 The FIFO system for our clock is a way of representing a numerical digit using
-individual LEDs. It was created as a compromise between simply counting the
-number of illuminated LEDs like on the TIX Clock which requires twice as many
-LEDs, and a binary clock which is harder and takes more time to read.
+individual LEDs. It was created as a compromise between the TIX Clock's system
+of counting illuminated LEDs and binary clocks. FIFO uses half as many LEDs
+as the TIX Clock, while being faster and easier to read than a binary clock.
 
+# How to Read the FIFO System
 FIFO stands for [First-In First-Out](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)),
-and displays a number by first illuminating LEDs from the bottom. At this point, the number of illuminated LEDs represents the digit.
-Once all LEDs are illuminated, LEDs are turned off from the bottom, and the number being represented can be thought of as either
+and displays a number by sequentially illuminating LEDs from the bottom up.
+At this point, the number of illuminated LEDs represents the digit.
+Once all LEDs are illuminated, LEDs are turned off sequentially from the bottom
+up. In this state, the number being represented can be thought of as either:
 - (Total Number of LEDs) + (OFF LEDs)
 or 
 - (Total Number of LEDs) * 2 - (ON LEDs)
