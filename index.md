@@ -5,9 +5,9 @@ clock that display the time using discrete LEDs. It shows time using a FIFO
 
 # Pictures
 
-![Front](./Front.png)
+![Front](./img/front.jpg)
 
-![Back](./Back.png)
+![Back](./img/back.jpg)
 
 # About Us
 We are Connor Northway and Eddie Zhou, currently two second-year Computer
@@ -21,11 +21,11 @@ Unfortunately the original version of this clock is no longer made, but check ou
 # How to Read the FIFO System
 White = ON  
 Black = OFF
-![FIFO 0-9](./FIFO_0-9.png)
+![FIFO 0-9](./img/FIFO_0-9.png)
 Each column shows a different number that the indicator can display.
 With the 5 LEDs above, the numbers 0-9 can be displayed.
 
-![FIFO 0-5](./FIFO_0-5.png)
+![FIFO 0-5](./img/FIFO_0-5.png)
 The numbers 0-5 shown with 3 LEDs.
 
 # Device Specifications
@@ -59,7 +59,7 @@ The numbers 0-5 shown with 3 LEDs.
 PCB:
 [Gerber Files](https://github.com/filoclock/hardware/tree/master/gerbers)
 
-You can download these and send them to a number of PCB manufacturers 
+You can download these and send them to a number of PCB manufacturers
 (JLCPCB, PCBWay, etc)
 
 For a detailed list of components with part numbers and ordering links see:
@@ -117,7 +117,7 @@ RTC crystal, and programming header.
 
 ## Firmware Installation
 
-set up arduino as ISP programmer
+set up arduino as ISP programmer (https://www.arduino.cc/en/tutorial/arduinoISP)
 
 install libusb-dev (on ubuntu)
 
