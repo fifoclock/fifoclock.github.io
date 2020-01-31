@@ -1,7 +1,12 @@
 # What is FIFO Clock?
-FIFO Clock is an open-source digital clock similar to binary clocks or the TIX
-clock that display the time using discrete LEDs. It shows time using a FIFO
-(First-In First-Out) system described [below](#how-to-read-the-filo-system).
+FIFO Clock is an open-source digital clock similar to a
+[binary clock](https://en.wikipedia.org/wiki/Binary_clock)
+or the
+[TIX Clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/)
+that displays the time using discrete LEDs.
+
+FIFO stands for [First-In First-Out](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)),
+which refers to the way time is shown using LEDs as described below.
 
 # Pictures
 
@@ -10,23 +15,43 @@ clock that display the time using discrete LEDs. It shows time using a FIFO
 ![Back](./img/back.jpg)
 
 # About Us
-We are Connor Northway and Eddie Zhou, currently two second-year Computer
+We are Connor Northway and Eddie Zhou, two second-year Computer
 Engineering and Computer Science students at Northeastern University (as of
-writing this post).
+Jan. 2020).
 
 # Inspiration
-The idea itself came from this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661), in which Destin shows off his [TIX clock](https://www.thinkgeek.com/product/7437/).
-Unfortunately the original version of this clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
+We were inspired to create our own clock by this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661).
+The idea for the FILO Clock started as a compromise between a [binary clock](https://en.wikipedia.org/wiki/Binary_clock)
+and the [TIX Clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
+Unfortunately the original version of the TIX Clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
-# How to Read the FIFO System
-White = ON  
-Black = OFF
-![FIFO 0-9](./img/FIFO_0-9.png)
-Each column shows a different number that the indicator can display.
-With the 5 LEDs above, the numbers 0-9 can be displayed.
+The FIFO system for our clock is a way of representing a numerical digit using
+individual LEDs. It was created as a compromise between the TIX Clock's system
+of counting illuminated LEDs and binary clocks. FIFO uses half as many LEDs
+as the TIX Clock, while being faster and easier to read than a binary clock.
 
-![FIFO 0-5](./img/FIFO_0-5.png)
-The numbers 0-5 shown with 3 LEDs.
+# How to Read the FIFO Clock
+The clock shows the time using three columns of LEDs:
+- 6 LEDs on the left to represent the hour
+- 3 LEDs in the middle to represent tens digit of minutes
+- 5 LEDs on the right to represent the ones digit of minutes
+
+![Picture]()
+
+1. Each column of LEDs starts with all LEDs off, representing the number 0 (12 for the hours column).
+2. To count up, LEDs are sequentially turned on from the bottom up until all LEDs
+in the column are illuminated.
+3. To continue counting up, LEDs are turned off from the bottom up until all LEDs are off again.
+
+(Each column can represent twice as many values as the number of LEDs!)
+
+![Video]()
+
+Here are some examples of various times:
+
+To quickly calculate a digit when the LEDs are at the top of a column, one of these formulas may be useful:
+- (Total Number of LEDs in Column) + (OFF LEDs)
+- 2 * (Total Number of LEDs in Colum) - (ON LEDs)
 
 # Device Specifications
 ## Hardware
@@ -168,8 +193,3 @@ Manager URLs". Paste the following URL in and accept the changes
 Lastly, find the .arduino folder
 
 ### Writing Firmware
-
-
-
-
-
