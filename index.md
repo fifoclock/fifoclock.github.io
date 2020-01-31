@@ -36,8 +36,6 @@ The clock shows the time using three columns of LEDs:
 - 3 LEDs in the middle to represent tens digit of minutes
 - 5 LEDs on the right to represent the ones digit of minutes
 
-![Picture]()
-
 1. Each column of LEDs starts with all LEDs off, representing the number 0 (12 for the hours column).
 2. To count up, LEDs are sequentially turned on from the bottom up until all LEDs
 in the column are illuminated.
@@ -45,13 +43,11 @@ in the column are illuminated.
 
 (Each column can represent twice as many values as the number of LEDs!)
 
-![Video]()
-
 Here are some examples of various times:
 
 To quickly calculate a digit when the LEDs are at the top of a column, one of these formulas may be useful:
 - (Total Number of LEDs in Column) + (OFF LEDs)
-- 2 * (Total Number of LEDs in Colum) - (ON LEDs)
+- 2 * (Total Number of LEDs in Column) - (ON LEDs)
 
 # Device Specifications
 ## Hardware
