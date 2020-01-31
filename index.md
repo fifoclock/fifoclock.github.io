@@ -117,19 +117,59 @@ RTC crystal, and programming header.
 
 ## Firmware Installation
 
-set up arduino as ISP programmer (https://www.arduino.cc/en/tutorial/arduinoISP)
+(Note: These instructions are for Linux-based systems, and may need some
+modification to work on Windows/MacOS)
 
-install libusb-dev (on ubuntu)
+### Setting up Tools
 
-make the micronucleus commandline tool
+To flash the initial micronucleus bootloader, you will need an in-circuit
+serial programmer (ISP). The easiest option is to set up an arduino board to
+act as one. Instructions for doing so can be found
+[here](https://www.arduino.cc/en/tutorial/arduinoISP).
 
-make the micronucleus firmware for filo
+Next, you'll want to install `avrdude` (which should be in your distribution's
+repositories) and micronucleus, which can be cloned from its github repo
+[here](https://github.com/micronucleus/micronucleus). You'll need to run
+`make; sudo make install` to make and install the commandline tool. `avrdude`
+will be used to install the bootloader, and `micronucleus` will be used to
+program the clock through USB.
 
-install avrdude
+Now that all the necessary tools are installed, clone the
+[firmware repo](https://github.com/fifoclock/firmware).
 
-flash the bootloader!
-`avrdude -c arduino -p t84 -P <programmer serial port> -b 19200 -U flash:w:<path to filo bootloader>`
+Note: this next step is only needed if you want to customize the bootloader.
+Otherwise, you can just use the boot.hex provided in our firmware repo.
 
-where <programmer serial port> is the serial port of the programmer (`/dev/ttyACM0` in my case)
+### Building the Bootloader
 
-and <path to filo bootloader> is the path to the hex file you made above
+Copy the `fifo-default` folder into the `firmware/configuration`
+folder of the micronucleus repository you cloned earlier. Then run
+`make clean; make CONFIG=fifo-default` to create the .hex file.
+
+### Flashing the Bootloader
+
+Once you have the bootloader .hex made and the ISP connected, run the following
+command to flash the bootloader:
+
+`avrdude -c arduino -p t84 -P \<programmer serial port\> -b 19200 -U flash:w:\<path to filo bootloader\>`
+
+where `<programmer serial port>` is the serial port of the programmer
+(`/dev/ttyACM0` in my case) and `<path to filo bootloader>` is the path to the
+ bootloader .hex file.
+
+### Setting up the Arduino IDE
+
+Install the Arduino IDE if you haven't already.
+
+Open the preferences window, and click the button next to "Additional Boards
+Manager URLs". Paste the following URL in and accept the changes
+`https://raw.githubusercontent.com/fifoclock/board-definitions/master/package_fifoclock_index.json`.
+
+Lastly, find the .arduino folder
+
+### Writing Firmware
+
+
+
+
+
