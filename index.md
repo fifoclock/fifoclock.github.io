@@ -19,6 +19,21 @@ We are Connor Northway and Eddie Zhou, two second-year Computer
 Engineering and Computer Science students at Northeastern University (as of
 Jan. 2020).
 
+# Device Specifications
+## Hardware
+
+* Microcontroller - ATTiny84
+* Real Time Clock (RTC) - DS1307
+* Individually Addressable RGBW LEDs - 14x SK6812
+* USB Type-C
+* CR3032 Battery Backup for RTC
+* Joystick for on-clock settings
+
+## Software
+
+* Arduino-compatible firmware
+* USB 1.1 via Micronucleus
+
 # Inspiration
 We were inspired to create our own clock by this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661).
 The idea for the FIFO Clock started as a compromise between a [binary clock](https://en.wikipedia.org/wiki/Binary_clock)
@@ -48,21 +63,6 @@ Here are some examples of various times:
 To quickly calculate a digit when the LEDs are at the top of a column, one of these formulas may be useful:
 - (Total Number of LEDs in Column) + (OFF LEDs)
 - 2 * (Total Number of LEDs in Column) - (ON LEDs)
-
-# Device Specifications
-## Hardware
-
-* Microcontroller - ATTiny84
-* Real Time Clock (RTC) - DS1307
-* Individually Addressable RGBW LEDs - 14x SK6812
-* USB Type-C
-* CR3032 Battery Backup for RTC
-* Joystick for on-clock settings
-
-## Software
-
-* Arduino-compatible firmware
-* USB 1.1 via Micronucleus
 
 # Build Guide
 ## Tools
