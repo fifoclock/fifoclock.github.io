@@ -78,7 +78,7 @@ To quickly calculate a digit when the LEDs are at the top of a column, one of th
 ## What you'll need
 
 PCB:
-[Gerber Files](https://github.com/filoclock/hardware/tree/master/gerbers)
+[Gerber Files](https://github.com/fifoclock/hardware/tree/master/gerbers)
 
 You can download these and send them to a number of PCB manufacturers
 (JLCPCB, PCBWay, etc)
@@ -161,7 +161,7 @@ Now that all the necessary tools are installed, clone the
 Note: this next step is only needed if you want to customize the bootloader.
 Otherwise, you can just use the boot.hex provided in our firmware repo.
 
-### Building the Bootloader
+### Building the Bootloader (Optional)
 
 Copy the `fifo-default` folder into the `firmware/configuration`
 folder of the micronucleus repository you cloned earlier. Then run
@@ -172,10 +172,10 @@ folder of the micronucleus repository you cloned earlier. Then run
 Once you have the bootloader .hex made and the ISP connected, run the following
 command to flash the bootloader:
 
-`avrdude -c arduino -p t84 -P \<programmer serial port\> -b 19200 -U flash:w:\<path to filo bootloader\>`
+`avrdude -c arduino -p t84 -P \<programmer serial port\> -b 19200 -U flash:w:\<path to fifo bootloader\>`
 
 where `<programmer serial port>` is the serial port of the programmer
-(`/dev/ttyACM0` in my case) and `<path to filo bootloader>` is the path to the
+(`/dev/ttyACM0` in my case) and `<path to fifo bootloader>` is the path to the
  bootloader .hex file.
 
 ### Setting up the Arduino IDE
@@ -186,6 +186,22 @@ Open the preferences window, and click the button next to "Additional Boards
 Manager URLs". Paste the following URL in and accept the changes
 `https://raw.githubusercontent.com/fifoclock/board-definitions/master/package_fifoclock_index.json`.
 
-Lastly, find the .arduino folder
+In the Arduino IDE, select `Tools > Board > FIFO Clock`.
 
-### Writing Firmware
+To compile the micronucleus programming tool, run `make` in the `micronucleus/command`
+folder that you downloaded earlier. Copy the `micronucleus` executable to
+`~/.arduino15/packages/fifoclock/tools` or wherever your `.arduinoXX` folder is.
+
+To compile the FIFO Clock firmware you'll also need the TinyWireM, TinyRTClib, and
+Adafruit NeoPixel libraries which can be installed using the library manager in the
+Arduino IDE: `Tools > Manage Libraries...`.
+
+### Uploading Firmware
+
+Open `firmware/FIFOClockFirmware/FIFOClockFirmware.ino` using the Arduino IDE
+from the [firmware repo](https://github.com/fifoclock/firmware) you downloaded earlier.
+
+Connect the FIFO Clock using a USB-C cable, and click upload. Press the reset button on
+the back of the clock, and wait for the firmware to upload.
+
+Congratulations! You now have a fully functional FIFO Clock!
