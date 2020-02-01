@@ -21,7 +21,7 @@ Jan. 2020).
 
 # Inspiration
 We were inspired to create our own clock by this [Smarter Every Day video](https://youtu.be/VvVigAr4hZc?t=661).
-The idea for the FILO Clock started as a compromise between a [binary clock](https://en.wikipedia.org/wiki/Binary_clock)
+The idea for the FIFO Clock started as a compromise between a [binary clock](https://en.wikipedia.org/wiki/Binary_clock)
 and the [TIX Clock](https://web.archive.org/web/20190525200106/https://www.thinkgeek.com/product/7437/).
 Unfortunately the original version of the TIX Clock is no longer made, but check out the [TIX Clock II](https://www.tixclock.shop/) if you want to buy one.
 
